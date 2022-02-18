@@ -21,6 +21,7 @@
 		B914679427BF347800478A5F /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B914679327BF347800478A5F /* Scene.swift */; };
 		B914679627BF443900478A5F /* SceneCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B914679527BF443900478A5F /* SceneCoordinatorType.swift */; };
 		B914679827BF454900478A5F /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B914679727BF454900478A5F /* SceneCoordinator.swift */; };
+		B914679A27BF4C7000478A5F /* CommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B914679927BF4C7000478A5F /* CommonViewModel.swift */; };
 		B97B0B1927BDFB3700EAD661 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97B0B1827BDFB3700EAD661 /* AppDelegate.swift */; };
 		B97B0B1B27BDFB3700EAD661 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97B0B1A27BDFB3700EAD661 /* SceneDelegate.swift */; };
 		B97B0B2027BDFB3700EAD661 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B97B0B1E27BDFB3700EAD661 /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 		B914679327BF347800478A5F /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		B914679527BF443900478A5F /* SceneCoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinatorType.swift; sourceTree = "<group>"; };
 		B914679727BF454900478A5F /* SceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
+		B914679927BF4C7000478A5F /* CommonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewModel.swift; sourceTree = "<group>"; };
 		B97B0B1527BDFB3700EAD661 /* RxMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B97B0B1827BDFB3700EAD661 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B97B0B1A27BDFB3700EAD661 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				B914678B27BE135000478A5F /* MemoDetailViewModel.swift */,
 				B914678D27BE137F00478A5F /* MemoComposeViewModel.swift */,
 				B914678F27BE144200478A5F /* ViewModelBindableType.swift */,
+				B914679927BF4C7000478A5F /* CommonViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				B914679627BF443900478A5F /* SceneCoordinatorType.swift in Sources */,
 				B914678A27BE12F400478A5F /* MemoListViewModel.swift in Sources */,
 				B914678C27BE135000478A5F /* MemoDetailViewModel.swift in Sources */,
+				B914679A27BF4C7000478A5F /* CommonViewModel.swift in Sources */,
 				B914679227BF339D00478A5F /* TransitionModel.swift in Sources */,
 				B914678427BE11F100478A5F /* MemoListViewController.swift in Sources */,
 				B914678827BE125500478A5F /* MemoComposeViewController.swift in Sources */,
