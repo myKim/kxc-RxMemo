@@ -6,13 +6,30 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import NSObject_Rx
 
 class MemoListViewController: UIViewController, ViewModelBindableType {
 
+    @IBOutlet weak var listTableView: UITableView!
+    @IBOutlet weak var addButton: UIBarButtonItem!
+    
     var viewModel: MemoListViewModel!
     
     func bindViewModel() {
+        // 메모 목록을 테이블 뷰에 바인딩하면 끝남
+        viewModel.title
+            .drive(navigationItem.rx.title)
+            .disposed(by: rx.disposeBag)
         
+        
+        // 데이터 소스 구현 없이 짧은 코드만으로 테이블 뷰의 데이터를 표시할 수 있다.
+        viewModel.memoList
+            .bind(to: listTableView.rx.items(cellIdentifier: "cell")) { row, memo, cell in
+                cell.textLabel?.text = memo.content
+            }
+            .disposed(by: rx.disposeBag)
     }
     
     override func viewDidLoad() {
