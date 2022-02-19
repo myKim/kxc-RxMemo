@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class MemoDetailViewController: UIViewController, ViewModelBindableType {
 
@@ -40,6 +41,18 @@ class MemoDetailViewController: UIViewController, ViewModelBindableType {
             .disposed(by: rx.disposeBag)
         
         editButton.rx.action = viewModel.makeEditAction()
+        
+        // 더블 탭을 막을 수 있다.
+        shareButton.rx.tap
+            .throttle(.milliseconds(500), scheduler: MainScheduler.instance)
+            .withUnretained(self)
+            .subscribe(onNext: { (vc, _) in
+                let memo = vc.viewModel.memo.content
+                
+                let activityVC = UIActivityViewController(activityItems: [memo], applicationActivities: nil)
+                vc.present(activityVC, animated: true, completion: nil)
+            })
+            .disposed(by: rx.disposeBag)
     }
     
     override func viewDidLoad() {
