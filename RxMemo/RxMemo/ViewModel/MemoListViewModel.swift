@@ -28,7 +28,6 @@ class MemoListViewModel: CommonViewModel {
                         .asObservable()
                         .map { _ in }
                 }
-
         }
     }
     
@@ -44,4 +43,17 @@ class MemoListViewModel: CommonViewModel {
             return self.storage.delete(memo: memo).map { _ in }
         }
     }
+    
+    // 메소드 형태로 구현할 수도 있지만, 속성 형태로 구현할 수도 있다.
+    lazy var detailAction: Action<Memo, Void> =  {
+        return Action { memo in
+            let detailViewModel = MemoDetailViewModel(memo: memo, title: "메모 보기", sceneCoordinator: self.sceneCoordinator, storage: self.storage)
+            
+            let detailScene = Scene.detail(detailViewModel)
+            
+            return self.sceneCoordinator.transition(to: detailScene, using: .push, animated: true)
+                    .asObservable()
+                    .map { _ in }
+        }
+    }()
 }
