@@ -22,6 +22,7 @@
 		B914679627BF443900478A5F /* SceneCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B914679527BF443900478A5F /* SceneCoordinatorType.swift */; };
 		B914679827BF454900478A5F /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B914679727BF454900478A5F /* SceneCoordinator.swift */; };
 		B914679A27BF4C7000478A5F /* CommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B914679927BF4C7000478A5F /* CommonViewModel.swift */; };
+		B9155C0127C1D98300D5D6A3 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9155C0027C1D98200D5D6A3 /* CoreDataStorage.swift */; };
 		B97B0B1927BDFB3700EAD661 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97B0B1827BDFB3700EAD661 /* AppDelegate.swift */; };
 		B97B0B1B27BDFB3700EAD661 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97B0B1A27BDFB3700EAD661 /* SceneDelegate.swift */; };
 		B97B0B2027BDFB3700EAD661 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B97B0B1E27BDFB3700EAD661 /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 		B914679527BF443900478A5F /* SceneCoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinatorType.swift; sourceTree = "<group>"; };
 		B914679727BF454900478A5F /* SceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
 		B914679927BF4C7000478A5F /* CommonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewModel.swift; sourceTree = "<group>"; };
+		B9155C0027C1D98200D5D6A3 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		B97B0B1527BDFB3700EAD661 /* RxMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B97B0B1827BDFB3700EAD661 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B97B0B1A27BDFB3700EAD661 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				B97B0B2127BDFB3700EAD661 /* RxMemo.xcdatamodeld */,
+				B9155C0027C1D98200D5D6A3 /* CoreDataStorage.swift */,
 			);
 			path = CoreDataStorage;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B914678227BE069400478A5F /* MemoryStorage.swift in Sources */,
+				B9155C0127C1D98300D5D6A3 /* CoreDataStorage.swift in Sources */,
 				B914678E27BE137F00478A5F /* MemoComposeViewModel.swift in Sources */,
 				B914679827BF454900478A5F /* SceneCoordinator.swift in Sources */,
 				B914679427BF347800478A5F /* Scene.swift in Sources */,
