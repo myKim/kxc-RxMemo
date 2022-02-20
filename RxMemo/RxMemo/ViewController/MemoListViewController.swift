@@ -26,9 +26,7 @@ class MemoListViewController: UIViewController, ViewModelBindableType {
         
         // 데이터 소스 구현 없이 짧은 코드만으로 테이블 뷰의 데이터를 표시할 수 있다.
         viewModel.memoList
-            .bind(to: listTableView.rx.items(cellIdentifier: "cell")) { row, memo, cell in
-                cell.textLabel?.text = memo.content
-            }
+            .bind(to: listTableView.rx.items(dataSource: viewModel.dataSource))
             .disposed(by: rx.disposeBag)
         
         addButton.rx.action = viewModel.makeCreateAction()
