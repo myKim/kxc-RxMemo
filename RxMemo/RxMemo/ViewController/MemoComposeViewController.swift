@@ -35,6 +35,29 @@ class MemoComposeViewController: UIViewController, ViewModelBindableType {
             .withLatestFrom(contentTextView.rx.text.orEmpty)
             .bind(to: viewModel.saveAction.inputs)
             .disposed(by: rx.disposeBag)
+        
+        let willShowObservable = NotificationCenter.default.rx.notification(UIResponder.keyboardWillShowNotification)
+            .compactMap { $0.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue } // compactMap을 사용하는 이유는 optional을 자동으로 unwrapping 하기 위해서이다. 이렇게 구현하면 notificataion이 전달되는 시점마다 구독자에게 키보드 높이가 전달된다.
+            .map { $0.cgRectValue.height } // map 연산자를 활용해서 최종적으로 키보드 높이를 방출
+        
+        let willHideObservable = NotificationCenter.default.rx.notification(UIResponder.keyboardWillHideNotification)
+            .map { noti -> CGFloat in 0 }
+        
+        let keyboardObservable = Observable.merge(willShowObservable, willHideObservable)
+            .share()
+        
+        keyboardObservable
+            .withUnretained(contentTextView)
+            .subscribe(onNext: { tv, height in
+                var inset = tv.contentInset
+                inset.bottom = height
+                tv.contentInset = inset
+                
+                var scrollInset = tv.verticalScrollIndicatorInsets
+                scrollInset.bottom = height
+                tv.verticalScrollIndicatorInsets = scrollInset
+            })
+            .disposed(by: rx.disposeBag)
     }
     
     override func viewDidLoad() {
